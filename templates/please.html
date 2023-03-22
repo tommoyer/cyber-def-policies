@@ -1,0 +1,10 @@
+<!doctype html>
+<head>
+    <title>Getting closer...</title>
+</head>
+<body>
+    <img src="{{ url_for('static', filename='please.gif') }}" alt="You need the magic word">
+    <p>Hint: I don't know what IP address I should try and connect to for the reverse shell. Maybe something like this might work:</p>
+    <pre>http://&lt;vm_ip&gt;:5000/shell/&lt;target_ip&gt;</pre>
+    <p>I will then try and open a connection to the target IP on port 7777. Maybe having something like <code>netcat</code> listening on that port inside your VM might help...</p>
+</body>
