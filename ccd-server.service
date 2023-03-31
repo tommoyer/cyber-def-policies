@@ -1,0 +1,12 @@
+[Unit]
+Description=Competitive cyber defense security policies server
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/ccd-server
+ExecStart=/opt/ccd-server/venv/bin/flask run
+
+[Install]
+WantedBy=multi-user.target
