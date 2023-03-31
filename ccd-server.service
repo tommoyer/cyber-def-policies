@@ -6,7 +6,8 @@ After=network.target
 Type=simple
 User=root
 WorkingDirectory=/opt/ccd-server
-ExecStart=/opt/ccd-server/venv/bin/flask run
+ExecStart=/opt/ccd-server/venv/bin/flask run --host=0.0.0.0
+ExecStop=pkill flask
 
 [Install]
 WantedBy=multi-user.target
