@@ -14,3 +14,5 @@ pushd /opt/ccd-server
 pip install -r /opt/ccd-server/requirements.txt
 deactivate
 popd
+
+systemctl enable --now ccd-server.service
