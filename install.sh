@@ -1,5 +1,7 @@
 #!/bin/bash
 
+apt install python3-pip python3-virtualenv
+
 cp ccd-server.service /etc/systemd/system/ccd-server.service
 systemctl daemon-reload
 
